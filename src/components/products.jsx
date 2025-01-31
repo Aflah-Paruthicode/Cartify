@@ -21,7 +21,13 @@ function Products (props) {
                 <img src={product.src} alt="" />
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <a href="">Add to Cart</a>
+                <h2>999/-</h2>
+                <button onClick={() => {
+                    props.dispach({
+                        type : 'add_to_cart',
+                        product : product.id
+                    })
+                }}>Add to Cart</button>
             </div>
                 )
 

@@ -1,7 +1,9 @@
 
 import React from "react";
 
-function Cart () {
+function Cart (props) {
+
+   
 
     return (
 

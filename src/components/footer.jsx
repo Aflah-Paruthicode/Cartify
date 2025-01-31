@@ -8,3 +8,5 @@ function Footer () {
         <h1>Thanks</h1>
     )
 }
+
+export default Footer
