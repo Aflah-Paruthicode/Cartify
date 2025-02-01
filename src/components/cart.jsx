@@ -3,6 +3,9 @@ import React from "react";
 
 function Cart (props) {
 
+
+    let products = props.cartProducts
+   
    
 
     return (
@@ -10,15 +13,25 @@ function Cart (props) {
         <div className="cart-root">
 
             <div className="cart-images">
-                <img src="rabit.jpeg" alt="" />
-                <img src="unicorn.jpeg" alt="" />
-                <img src="duck.jpeg" alt="" />
-                <img src="panda.jpeg" alt="" />
+                {
+                
+                    products.cart.map((element) => {
+                        return (
+                            
+                            <img src={element.src} alt="" />
+                        )
+                        
+                    })
+  
+                }
+
+               
+                
             </div>
 
             <div>
-                <h1>Totel ammount : 300/-</h1>
-                <h1>Totel items : 3</h1>
+                <h1>Totel ammount : {products.totel}/-</h1>
+                <h1>Totel items : {products.cart.length}</h1>
             </div>
         </div>
     )

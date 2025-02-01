@@ -92,14 +92,14 @@ video {
 .product {
 
   width: 300px;
-  height: 49vh;
+  height: 51vh;
   margin-top: 30px;
   background-color: black;
   border-radius: 10px;
   text-align: center;
 }
 
-.product a {
+.product button {
 
   text-decoration: none;
   color: black;

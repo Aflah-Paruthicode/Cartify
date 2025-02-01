@@ -4,6 +4,8 @@ import React from "react";
 function Products (props) {
 
 
+    let cartItems = props.cartProducts
+
 
     return (
 
@@ -14,6 +16,7 @@ function Products (props) {
             
         {
             props.products.map((product)=> {
+                let isInCart = cartItems.cart.some((item) => item.id === product.id);
 
                 return (
 
@@ -21,13 +24,15 @@ function Products (props) {
                 <img src={product.src} alt="" />
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <h2>999/-</h2>
-                <button onClick={() => {
-                    props.dispach({
-                        type : 'add_to_cart',
-                        product : product.id
-                    })
-                }}>Add to Cart</button>
+                <h2>{product.price}/-</h2>
+                <button  onClick={() => {
+                                    props.dispach({
+                                        type: isInCart ? "remove_from_cart" : "add_to_cart",
+                                        product: product.id,
+                                    });
+                                }}>
+                    {isInCart ? "Remove from cart" : "Add to cart"}
+                </button>
             </div>
                 )
 
